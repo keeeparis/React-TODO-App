@@ -1,0 +1,14 @@
+.button {
+    padding: 5px 15px;
+    color: slateblue;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid slateblue;
+    cursor: pointer;
+    height: fit-content;
+
+    &.slateblue {
+        color: white;
+        background-color: slateblue;
+    }
+}

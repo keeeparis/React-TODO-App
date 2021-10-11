@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    margin: 10px;
+    width: 800px;
+}
+
+.list h1 {
+    text-align: center;
+}
+
+.list--item {
+    border: 1px solid slateblue;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
