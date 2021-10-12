@@ -14,7 +14,7 @@ export default function List({posts, remove}) {
         <div className='list'>
             <h1>Список постов:</h1>
             {posts.map((post, index) => 
-                <Item post={post} num={index+1} key={post.id} remove={remove}/>
+                <Item post={post} num={index+1} remove={remove} key={post.id}/>
             )}
         </div>
     )

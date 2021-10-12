@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState} from "react"
 import { usePosts } from "../hooks/usePosts"
 import Button from "../components/UI/button/Button"
 import Modal from "../components/UI/modal/Modal"
@@ -6,16 +6,15 @@ import Filter from "../components/Filter"
 import List from "../components/List"
 import Form from "../components/Form"
 import { AuthContext } from "../context"
+import { useSaveToStorage } from "../hooks/useSaveToStorage"
 
 export default function Posts() {
     const {posts, setPosts} = useContext(AuthContext)
-    // const [posts, setPosts] = useState([
-    //     {id: 111, title: 'Javascript', body: 'programLanguage I study and work with'},
-    //     {id: 222, title: 'Python', body: 'I started it one year ago'},
-    //     {id: 333, title: 'C++', body: 'Very scary I guess'},
-    // ])
     const [filter, setFilter] = useState({sort:'', query:''})
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query)
+
+    useSaveToStorage(posts)
+
     const [modal, setModal] = useState(false)
     const createPost = (newPost) => {
         setPosts([...posts, newPost])
