@@ -15,5 +15,7 @@ export const usePosts = (posts, sort, query) => {
     const sortedAndSearchedPosts = useMemo(() => {
         return sortedPosts.filter(post => post.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
     }, [sortedPosts, query])
+    
+    localStorage.setItem('posts', JSON.stringify(sortedAndSearchedPosts))
     return sortedAndSearchedPosts
 }

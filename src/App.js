@@ -8,16 +8,21 @@ import { BrowserRouter } from 'react-router-dom'
 function App() {
     const [isAuth, setIsAuth] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
         if (localStorage.getItem('auth')) {
             setIsAuth(true)
         }
         setIsLoading(false)
+
+        if (localStorage.getItem('posts')) {
+            setPosts(JSON.parse(localStorage.getItem('posts')))
+        }
     }, [])
 
     return(
-        <AuthContext.Provider value={{isAuth, setIsAuth, isLoading}}>
+        <AuthContext.Provider value={{isAuth, setIsAuth, isLoading, posts, setPosts}}>
             <BrowserRouter>
                 <Navbar />
                 <AppRouter />
