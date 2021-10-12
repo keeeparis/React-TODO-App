@@ -3,7 +3,7 @@ import React from 'react'
 export default function Select({defaultValue, filter, setFilter, options}) {
     return (
         <select
-            value=''
+            value={filter.sort}
             onChange={(e) => setFilter({...filter, sort: e.target.value})}
         >
             <option value='' disabled>{defaultValue}</option>

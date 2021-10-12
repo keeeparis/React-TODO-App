@@ -21,3 +21,17 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.navbar {
+    height: 50px;
+    background-color: blanchedalmond;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid rgb(252, 209, 146);
+}
+
+.loginForm {
+    width: 700px;
+    margin: 30px auto 0;
+}
